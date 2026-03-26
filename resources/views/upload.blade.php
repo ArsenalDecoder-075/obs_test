@@ -13,7 +13,6 @@
             font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
             background-color: #1F2E35;
         }
 
@@ -76,6 +75,27 @@
             color: #BE1E3C;
         }
 
+        /* Custom Button Hover Logic */
+        .btn-outline-danger:hover,
+        .btn-success:hover,
+        .btn-outline-info:hover {
+            color: #000 !important; /* Force text to black on hover */
+            font-weight: bold;
+        }
+
+        /* Specific background colors on hover */
+        .btn-outline-danger:hover { background-color: #dc3545 !important; border-color: #dc3545; }
+        .btn-success:hover { background-color: #198754 !important; border-color: #198754; }
+        .btn-outline-info:hover { background-color: #0dcaf0 !important; border-color: #0dcaf0; }
+
+        /* Ensure Simpan starts as an outline like the others */
+        .btn-save-custom {
+            background-color: transparent;
+            color: #198754;
+            border: 2px solid #198754;
+            transition: 0.3s;
+        }
+
         .list-info ol { padding-left: 20px; }
         .list-info li { margin-bottom: 25px; font-weight: 400; }
         .list-info b { font-size: 1.1rem; }
@@ -128,6 +148,7 @@
             @endif
 
             <div class="upload-form-container">
+
                 <div class="alert alert-info py-2" style="background: rgba(255,255,255,0.1); color: white; border: none;">
                     📄 File: <strong>{{ session('staged_file')['original_name'] }}</strong>
                 </div>
@@ -155,10 +176,29 @@
                         <textarea class="form-control" name="description" rows="2"></textarea>
                     </div>
 
-                    <div class="d-flex gap-2">
-                        <a href="{{ route('welcome') }}" class="btn btn-outline-light w-50" style="border-radius: 50px;">Batal</a>
-                        <button type="submit" class="btn btn-submit w-50 m-0">Simpan Ke Cloud</button>
+                    <div class="d-flex gap-2 mb-4">
+                        <a href="{{ route('welcome') }}"
+                           class="btn btn-outline-danger w-50 d-flex align-items-center justify-content-center"
+                           style="border-radius: 50px; font-size: 1rem; border-width: 2px;">
+                           Batal
+                        </a>
+
+                        <button type="submit"
+                                class="btn btn-outline-success w-50 m-0 d-flex align-items-center justify-content-center"
+                                style="border-radius: 50px; font-size: 1rem; border-width: 2px;">
+                                Simpan Ke Cloud
+                        </button>
                     </div>
+
+                    <div class="d-flex justify-content-center gap-2 mt-2">
+                        <a href="{{ route('upload.gallery') }}"
+                           class="btn btn-outline-info w-50 d-flex align-items-center justify-content-center"
+                           style="border-radius: 50px; font-size: 1rem; border-width: 2px;">
+                           Kembali ke Galeri
+                        </a>
+                    </div>
+
+
                 </form>
             </div>
         </div>

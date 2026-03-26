@@ -24,9 +24,15 @@
             <h1 class="fw-bold">Cloud Gallery</h1>
             <p class="text-white-50">Daftar file yang berhasil disimpan di Laravel Cloud Storage</p>
         </div>
-        <a href="{{ route('welcome') }}" class="btn btn-outline-light px-4" style="border-radius: 50px;">
-            <i class="bi bi-plus-lg me-2"></i> Upload Baru
-        </a>
+        <div>
+            <a href="{{ route('welcome') }}" class="btn btn-outline-light px-4" style="border-radius: 50px;">
+                <i class="bi bi-plus-lg me-2"></i> Upload Baru
+            </a>
+            {{-- <a href="{{ route('welcome') }}" class="btn btn-outline-light px-4 py-2" style="border-radius: 50px; border-width: 2px;">
+                <i class="bi bi-house-door me-2"></i> Ke Beranda
+            </a> --}}
+        </div>
+
     </div>
 
     <div class="row g-4">
