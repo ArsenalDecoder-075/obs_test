@@ -1,0 +1,87 @@
+:root {
+    --bg-red: #be1e3c;
+    --bg-dark: #1f2e35;
+    --input-bg: #e9ecef;
+    --btn-success: #2dff3c;
+    --btn-danger: #ff2d2d;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    overflow: hidden; /* Mematikan scroll sesuai permintaan */
+    height: 100vh;
+}
+
+.main-wrapper {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Sisi Kiri */
+.panel-left {
+    flex: 1;
+    background-color: var(--bg-red);
+    color: white;
+    padding: 60px;
+    transition: all 0.5s ease;
+}
+
+/* Sisi Kanan */
+.panel-right {
+    flex: 1.2;
+    background-color: var(--bg-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: white;
+}
+
+/* Kotak Upload (TV-1) */
+.upload-box {
+    width: 80%;
+    aspect-ratio: 16/9;
+    border: 5px solid white;
+    border-radius: 50px;
+    background-color: var(--bg-red);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.upload-box:hover {
+    transform: scale(1.02);
+}
+
+/* Form Styling (TV-2) */
+.custom-input {
+    background-color: var(--input-bg);
+    border: 2px solid #333;
+    border-radius: 12px;
+    padding: 10px;
+    width: 100%;
+    color: #333;
+}
+
+.preview-container {
+    background: white;
+    border-radius: 15px;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.preview-container img {
+    max-width: 100%;
+    max-height: 100%;
+}
